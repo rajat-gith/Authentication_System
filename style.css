@@ -1,0 +1,92 @@
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.main_content {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  background: #5C5CFF;
+  justify-content: center;
+}
+
+.main_content p {
+  text-align: center;
+}
+.registration_form {
+  display: flex;
+  flex-direction: column;
+}
+.registration_form {
+  padding: 10px;
+}
+.signin_form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.signin_form > input {
+  margin-bottom: 5px;
+  padding: 10px;
+}
+.registration_form {
+  padding: 10px;
+}
+.registration_form > input {
+  margin-bottom: 5px;
+  padding: 10px;
+}
+.gender {
+  display: flex;
+  flex-direction: row;
+}
+.gender > label {
+  display: flex;
+  align-items: center;
+}
+.hobbies {
+  display: flex;
+}
+.choices {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.branch {
+  margin-bottom: 5px;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.button button {
+  width: 30%;
+  margin: 10px;
+  padding: 10px;
+}
+.signup {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: row;
+}
+.signup > span {
+  display: flex;
+  align-items: center;
+  font-weight: 800;
+  margin-left: 10px;
+}
+.signup > span > a {
+  text-decoration: none;
+}
+@media only screen and (max-width: 488px) {
+  .main_content {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+  }
+}
