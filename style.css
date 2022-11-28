@@ -1,23 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+}
 body {
   display: flex;
   height: 100vh;
   justify-content: center;
   align-items: center;
+  background: #EBEEF7;
 }
 .main_content {
   display: flex;
   flex-direction: column;
   width: 30%;
-  background: #5C5CFF;
+  background: #081945;
   justify-content: center;
+  border: 10px #081945 solid;
+  border-radius: 5px;
+  
 }
 
 .main_content p {
   text-align: center;
+  font-size: larger;
+  color:white;
+
+
+
 }
 .registration_form {
   display: flex;
   flex-direction: column;
+  color:white;
 }
 .registration_form {
   padding: 10px;
@@ -30,17 +44,23 @@ body {
 .signin_form > input {
   margin-bottom: 5px;
   padding: 10px;
+  border: 10px white solid;
+  border-radius: 5px;
 }
 .registration_form {
   padding: 10px;
 }
 .registration_form > input {
   margin-bottom: 5px;
-  padding: 10px;
+  padding: 5px;
+  border: 10px white solid;
+  border-radius: 5px;
+  background: white;
 }
 .gender {
   display: flex;
   flex-direction: row;
+  padding: 5px;
 }
 .gender > label {
   display: flex;
@@ -48,6 +68,10 @@ body {
 }
 .hobbies {
   display: flex;
+  padding: 5px;
+}
+.btn{
+  background:#7cb9e8;
 }
 .choices {
   display: flex;
@@ -57,8 +81,12 @@ body {
 
 .branch {
   margin-bottom: 5px;
+  padding: 5px;
 }
 
+.option{
+  padding:3px;
+}
 .button {
   display: flex;
   flex-direction: row;
@@ -80,9 +108,65 @@ body {
   font-weight: 800;
   margin-left: 10px;
 }
+
 .signup > span > a {
   text-decoration: none;
+  color:#7cb9e8
 }
+.forgotpassword {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: row;
+}
+.forgotpassword > span {
+  display: flex;
+  align-items: center;
+  font-weight: 800;
+  margin-left: 10px;
+}
+.forgotpassword > span > a {
+  text-decoration: none;
+  color:#7cb9e8;
+
+}
+.details_main_content{
+  display: flex;
+  flex-direction: column;
+  background: #081945;
+  justify-content: center;
+  border: 10px #081945 solid;
+  border-radius: 5px;
+  padding:5px;
+  width: 50%;
+}
+.details_main_content > p{
+  display: block;
+  width:100%;
+  text-align: center;
+  color:white;
+}
+.details_page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+.row{
+  display: flex;
+  width: inherit;
+  flex-direction: row;
+
+}
+.key{
+  width:50%;
+  color: white;
+}
+.row p{
+  color:#7cb9e8;
+
+  
+}
+
 @media only screen and (max-width: 488px) {
   .main_content {
     display: flex;

@@ -15,46 +15,48 @@ session_start();
 </head>
 
 <body>
-    <div class="main_content">
+    <div class="details_main_content">
         <p>Details Page</p>
-        <form class="registration_form" action="" method="post">
-            <tr>
-                <td>Name:</td>
-                <td>
+        <div class="details_page">
+            <div class="row">
+                <p class="key">Name:</p>
+                <p>
                     <?php echo $_SESSION['name'] ?>
-                </td>
-            </tr><br>
-            <tr>
-                <td>Email:</td>
-                <td>
+                </p>
+            </div>
+            <div class="row">
+                <p class="key">Email:</p>
+                <p>
                     <?php echo $_SESSION['email'] ?>
-                </td>
-            </tr><br>
-            <tr>
-                <td>Branch:</td>
-                <td>
+                </p>
+            </div>
+            <div class="row">
+                <p class="key">Branch:</p>
+                <p>
                     <?php echo $_SESSION['branch'] ?>
-                </td>
-            </tr><br>
-            <tr>
-                <td>Gender:</td>
-                <td>
+                </p>
+            </div>
+            <div class="row">
+                <p class="key">Gender:</p>
+                <p>
                     <?php echo $_SESSION['gender'] ?>
-                </td>
-            </tr><br>
-            <tr>
-                <td>Registration No:</td>
-                <td>
+                </p>
+            </div>
+            <div class="row">
+                <p class="key">Registration No:</p>
+                <p>
                     <?php echo $_SESSION['regno'] ?>
-                </td>
-            </tr><br>
-            <tr>
-                <td>Mobile No:</td>
-                <td>
+                </p>
+            </div>
+            <div class="row">
+                <p class="key">Mobile No:</p>
+                <p>
                     <?php echo $_SESSION['mobileno'] ?>
-                </td>
-            </tr>
-        </form>
+                </p>
+            </div>
+
+
+        </div>
     </div>
 </body>
 

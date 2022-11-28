@@ -40,7 +40,7 @@ if (isset($_POST['login'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SignIn</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -56,6 +56,10 @@ if (isset($_POST['login'])) {
         <div class="signup">
             <p>Already Have an Account:</p>
             <span><a href="./signup.php">SignUp</a></span>
+        </div>
+        <div class="forgotpassword">
+            <p>Forgot Password:</p>
+            <span><a href="./forgotpassword.php">Forgot Password</a></span>
         </div>
     </div>
 </body>

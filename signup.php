@@ -12,20 +12,34 @@ if (isset($_POST['register'])) {
   $sex = mysqli_real_escape_string($conn, $_POST['sex']);
   $hobies = mysqli_real_escape_string($conn, $_POST['hobies']);
 
+  $select = "SELECT email from STUDENT";
+  $res = mysqli_query($conn, $select);
 
-  $query = "INSERT INTO STUDENT VALUES('$name','$dob','$regno','$email','$password','$mobileno','$sex','$hobies','$branch')";
+  if (mysqli_num_rows($res) > 0) {
+    $emailarray = [];
+    while ($array = mysqli_fetch_array($res)) {
+      $emailarray[] = $array['email'];
+    }
 
-  // $query = "INSERT INTO TEST VALUES('$name','$dob','$regno','$email','$password','$mobileno')";
+    if (!in_array($email, $emailarray, TRUE)) {
+      $query = "INSERT INTO STUDENT VALUES('$name','$dob','$regno','$email','$password','$mobileno','$sex','$hobies','$branch')";
 
-  $run = mysqli_query($conn, $query);
-  if ($run) {
-    echo '<script>alert("Added Successfully")</script>';
-    header("location:signin.php");
+      // $query = "INSERT INTO TEST VALUES('$name','$dob','$regno','$email','$password','$mobileno')";
 
+      $run = mysqli_query($conn, $query);
+      if ($run) {
+        echo '<script>alert("Added Successfully")</script>';
+        header("location:signin.php");
+
+      } else {
+        echo '<script>alert("Failed")</script>';
+      }
+    } else {
+      echo '<script>alert("User with same email already exist")</script>';
+    }
   } else {
-    echo "Failed";
+    echo '<script>alert("No data in database")</script>';
   }
-  
 }
 
 ?>
@@ -57,14 +71,14 @@ if (isset($_POST['register'])) {
         placeholder="Password" name="password" required />
       <input type="text" placeholder="Mobile No." name="mobileno" required />
       <div class="gender">
-        <p>Choose Your Gender</p>
+        <span>Choose Your Gender</span>
         <input type="radio" value="male" name="sex" placeholder="Male" />
         <label for="male">Male</label>
         <input type="radio" value="female" name="sex" placeholder="Female" />
         <label for="female">Female</label>
       </div>
       <div class="hobbies">
-        <p>Choose your hobbies:</p>
+        <span>Choose your hobbies:</span>
         <div class="choices">
           <div class="ticks">
             <input type="checkbox" name="hobies" value="playing" />
@@ -82,7 +96,7 @@ if (isset($_POST['register'])) {
       </div>
       <div class="branch">
         <label for="branch">Choose Your Branch</label>
-        <select name="branch">
+        <select class='option' name="branch">
           <option value="">--select--</option>
           <option value="PE">PE</option>
           <option value="CSE">CSE</option>
@@ -90,13 +104,12 @@ if (isset($_POST['register'])) {
           <option value="ETC">ETC</option>
         </select>
       </div>
-      <input type="submit" name="register" value="register"></input>
-      <input type="reset" name="Reset" value="Reset"></input>
-      <!-- <button type="reset">Reset</button> -->
+      <input type="submit" name="register" value="Register" class='btn'></input>
+      <input type="reset" name="Reset" value="Reset" class='btn'></input>
     </form>
     <div class="signup">
       <p>Already Have an Account:</p>
-      <span><a href="./signin.php">SignIN</a></span>
+      <span><a href="./signin.php">SignIn</a></span>
     </div>
   </div>
 </body>
