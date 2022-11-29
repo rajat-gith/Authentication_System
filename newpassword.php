@@ -13,27 +13,37 @@ if (isset($_POST['set'])) {
     $res = mysqli_query($conn, $select);
 
     $emailarray = [];
-    
+
     if (mysqli_num_rows($res) > 0) {
         while ($array = mysqli_fetch_array($res)) {
             $emailarray[] = $array['email'];
         }
         if (in_array($email, $emailarray, TRUE)) {
 
-            if ($newpassword == $confirmpassword) {
-                $run = " UPDATE STUDENT SET password='$confirmpassword' 
-                    WHERE email = '$email' AND password='$currentpassword'" ;
-                $result = mysqli_query($conn, $run);
-                if ($result) {
-                    echo '<script>alert("Password Changed Successfully")</script>';
-                    header("location:signin.php");
-                } else {
-                    echo '<script>alert("Check Again!!!")</script>';
-                }
-            } else {
-                echo '<script>alert("Password does not match")</script>';
+            $check = "SELECT * FROM STUDENT WHERE email='$email' AND password='$currentpassword'";
+            $r = mysqli_query($conn, $check);
 
+            if (mysqli_num_rows($r) > 0) {
+                if ($newpassword == $confirmpassword) {
+                    $run = " UPDATE STUDENT SET password='$confirmpassword' 
+                        WHERE email = '$email'";
+                    $result = mysqli_query($conn, $run);
+                    if ($result) {
+                        echo '<script>alert("Password Changed Successfully")</script>';
+                        header("location:signin.php");
+                    } else {
+                        echo '<script>alert("Check Again!!!")</script>';
+                    }
+                } else {
+                    echo '<script>alert("Password does not match")</script>';
+
+                }
             }
+            else {
+                echo '<script>alert("No record Found")</script>';
+            }
+
+
         } else {
             echo '<script>alert("User does not exist")</script>';
         }
@@ -49,7 +59,7 @@ if (isset($_POST['set'])) {
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SignIn</title>
+    <title>New Password</title>
     <link rel="stylesheet" href="style.css" />
 
 </head>

@@ -60,7 +60,7 @@ if (isset($_POST['login'])) {
         </div>
         <div class="forgotpassword">
             <p>Forgot Password:</p>
-            <span><a href="./forgotpassword.php">Forgot Password</a></span>
+            <span><a href="./emailform.php">Forgot Password</a></span>
         </div>
     </div>
 </body>
