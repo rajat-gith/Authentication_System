@@ -53,7 +53,14 @@ session_start();
                 <p>
                     <?php echo $_SESSION['mobileno'] ?>
                 </p>
+            </div><div class="row">
+                <p class="key">Hobies</p>
+                <p>
+                    <?php echo $_SESSION['hobies'] ?>
+                </p>
             </div>
+            <button class="change_password"><a href="newpassword.php">Change Password</a></button>
+
 
 
         </div>

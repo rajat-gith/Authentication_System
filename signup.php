@@ -10,7 +10,11 @@ if (isset($_POST['register'])) {
   $mobileno = mysqli_real_escape_string($conn, $_POST['mobileno']);
   $branch = mysqli_real_escape_string($conn, $_POST['branch']);
   $sex = mysqli_real_escape_string($conn, $_POST['sex']);
-  $hobies = mysqli_real_escape_string($conn, $_POST['hobies']);
+  $hobies1 = mysqli_real_escape_string($conn, $_POST['hobies1']);
+  $hobies2 = mysqli_real_escape_string($conn, $_POST['hobies2']);
+  $hobies3 = mysqli_real_escape_string($conn, $_POST['hobies3']);
+
+  $hobies= $hobies1." ".$hobies2." ".$hobies3;
 
   $select = "SELECT email from STUDENT";
   $res = mysqli_query($conn, $select);
@@ -81,15 +85,15 @@ if (isset($_POST['register'])) {
         <span>Choose your hobbies:</span>
         <div class="choices">
           <div class="ticks">
-            <input type="checkbox" name="hobies" value="playing" />
+            <input type="checkbox"  id="playing" name="hobies1" value="playing" />
             <label for="playing">Playing</label>
           </div>
           <div class="ticks">
-            <input type="checkbox" name="hobies" value="Singing" />
+            <input type="checkbox" id="singing" name="hobies2" value="Singing" />
             <label for="singing">Singing</label>
           </div>
           <div class="ticks">
-            <input type="checkbox" name="hobies" value="coding" />
+            <input type="checkbox" name="hobies3" id="coding" value="coding" />
             <label for="coding">Coding</label>
           </div>
         </div>
@@ -104,7 +108,7 @@ if (isset($_POST['register'])) {
           <option value="ETC">ETC</option>
         </select>
       </div>
-      <input type="submit" name="register" value="Register" class='btn'></input>
+      <input type="submit" name="register" onclick="store()" value="Register" class='btn'></input>
       <input type="reset" name="Reset" value="Reset" class='btn'></input>
     </form>
     <div class="signup">

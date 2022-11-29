@@ -166,7 +166,14 @@ body {
 
   
 }
+.change_password > a{
+  text-decoration: none;
+  padding: 3px;
 
+}
+.change_password{
+  padding: 3px;
+}
 @media only screen and (max-width: 488px) {
   .main_content {
     display: flex;

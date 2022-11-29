@@ -19,6 +19,7 @@ if (isset($_POST['login'])) {
         $_SESSION['mobileno'] = $row['mobileno'];
         $_SESSION['branch'] = $row['branch'];
         $_SESSION['gender'] = $row['sex'];
+        $_SESSION['hobies'] = $row['hobies'];
 
         echo '<script>alert("Logged In Successfully")</script>';
         header("location:details.php");
